@@ -20,7 +20,7 @@ const NavBar = () => {
       >
         <div className="container-fluid px-4">
           <Link className="navbar-brand fw-bold text-white fs-4" to="/" style={{ letterSpacing: '1px' }}>
-            🌐 Rest Countries
+            🌐 Rest Countrie
           </Link>
 
           {/* Always show Login / Logout on right even on mobile */}
