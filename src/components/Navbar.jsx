@@ -23,60 +23,60 @@ const NavBar = () => {
             🌐 Rest Countries
           </Link>
 
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent"
-            aria-controls="navbarContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
+          {/* Always show Login / Logout on right even on mobile */}
+          <div className="d-flex align-items-center order-lg-2">
+            {user ? (
+              <>
+                <span className="nav-link text-white fs-6 me-2 mb-0">
+                  Welcome, <strong className="text-info">{user.username}</strong>
+                </span>
+                <button
+                  className="btn btn-outline-light ms-2 rounded-pill px-3 py-1"
+                  onClick={logout}
+                  style={{ transition: '0.3s' }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#fff';
+                    e.target.style.color = '#2c5364';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#fff';
+                  }}
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="btn btn-outline-info ms-2 rounded-pill px-3 py-1"
+                style={{ transition: '0.3s' }}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = '#17a2b8';
+                  e.target.style.color = '#fff';
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#17a2b8';
+                }}
+              >
+                Login
+              </Link>
+            )}
+          </div>
 
-          <div className="collapse navbar-collapse justify-content-between" id="navbarContent">
+          {/* Toggler for small screens */}
+    
+
+          {/* Collapsible links */}
+          <div className="collapse navbar-collapse order-lg-1" id="navbarContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link text-white fs-5" to="/">
                   <i className="bi bi-house-door-fill me-1"></i> Home
                 </Link>
               </li>
-            </ul>
-
-            <ul className="navbar-nav align-items-center">
-              {user ? (
-                <>
-                  <li className="nav-item">
-                    <span className="nav-link text-white fs-6">
-                      Welcome, <strong className="text-info">{user.username}</strong>
-                    </span>
-                  </li>
-                  <li className="nav-item">
-                    <button
-                      className="btn btn-outline-light ms-2 rounded-pill px-3 py-1"
-                      onClick={logout}
-                      style={{ transition: '0.3s' }}
-                      onMouseOver={(e) => (e.target.style.backgroundColor = '#fff', e.target.style.color = '#2c5364')}
-                      onMouseOut={(e) => (e.target.style.backgroundColor = 'transparent', e.target.style.color = '#fff')}
-                    >
-                      Logout
-                    </button>
-                  </li>
-                </>
-              ) : (
-                <li className="nav-item">
-                  <Link
-                    to="/login"
-                    className="btn btn-outline-info ms-2 rounded-pill px-3 py-1"
-                    style={{ transition: '0.3s' }}
-                    onMouseOver={(e) => (e.target.style.backgroundColor = '#17a2b8', e.target.style.color = '#fff')}
-                    onMouseOut={(e) => (e.target.style.backgroundColor = 'transparent', e.target.style.color = '#17a2b8')}
-                  >
-                    Login
-                  </Link>
-                </li>
-              )}
+              {/* Add more nav items here if needed */}
             </ul>
           </div>
         </div>
