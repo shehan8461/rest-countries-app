@@ -1,0 +1,78 @@
+/* General navbar style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #444;
+}
+
+/* Logo styling */
+.logo h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #61dafb;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.navbar:hover .logo h1 {
+  color: #fff;
+}
+
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Styling the login link */
+.auth-link {
+  font-size: 1rem;
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #21a1f1;
+}
+
+/* Welcome message style */
+.welcome-message {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+/* Auth button style */
+.auth-button button {
+  padding: 0.6rem 1.2rem;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 25px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-button button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-3px);
+}
+
+.auth-button button:active {
+  transform: translateY(1px);
+}
